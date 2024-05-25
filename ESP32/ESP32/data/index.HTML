@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robot Wifi Position</title>
+  <style>
+    canvas {
+      border: 2px solid #000;
+    }
+    .button {
+      padding: 20px;
+      font-size: 24px;
+    }
+    .slider-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .slider {
+      width: 100%;
+      height: 60px; /* Increased height */
+    }
+    .slider-label {
+      font-weight: bold;
+      font-size: 26px; /* Larger font size */
+    }
+  </style>
+</head>
+<body>
+  <h1>Robot Wifi Position</h1>
+  <canvas id="plotCanvas" width="800" height="600"></canvas>
+  <div>
+    <p>X: <span id="xValue"></span> m</p>
+    <p>Y: <span id="yValue"></span> m</p>
+    <p>Theta: <span id="thetaValue"></span></p>
+    <p>Robot Velocity: <span id="angularVelocityValue"></span> m/s</p>
+  </div>
+  <button id="controlButton" class="button" onclick="toggleState()">Start</button>
+  <button class="button" onclick="promptCoordinates()">Set Coordinates</button>
+  <div class="slider-container">
+    <p class="slider-label">Speed Slider</p>
+    <input type="range" min="0" max="10" value="0" class="slider" id="speedSlider" onchange="setSpeed(this.value)">
+  </div>
+  <script src="javascript.js"></script>
+</body>
+</html>
